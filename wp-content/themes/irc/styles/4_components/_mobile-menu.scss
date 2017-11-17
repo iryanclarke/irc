@@ -1,0 +1,136 @@
+.menu-toggle, #toggle-right {
+	display: none;
+}
+
+
+// Tablets
+@media only screen and (max-width: 1000px) {
+
+	nav {
+		.menu-toggle {
+			display: block;
+		}
+		.menu-toggle  {
+			width: initial;
+		  height: inherit;
+		  margin-right: -0.5em;
+
+			// Credit for animated SVG menu to Tamino Martinius
+			svg {
+				width: 80px;
+    		height: 65px;
+			  cursor: pointer;
+			  transform: translate3d(0, 0, 0);
+			}
+			path {
+			  fill: none;
+			  transition: stroke-dashoffset 0.4s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.4s cubic-bezier(0.25, -0.25, 0.75, 1.25), all 0.4s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+			  stroke-width: 40px;
+			  stroke-linecap: round;
+			  stroke: $color-fourth;
+			  stroke-dashoffset: 0px;
+			}
+			path#top,
+			path#bottom {
+			  stroke-dasharray: 240px 950px;
+			}
+			path#middle {
+			  stroke-dasharray: 10px 10px;
+			}
+			&.cross path#top,
+			&.cross path#bottom {
+			  stroke-dashoffset: -650px;
+			  stroke-dashoffset: -650px;
+			}
+			&.cross path#middle {
+			  stroke-dashoffset: -115px;
+			  stroke-dasharray: 1px 220px;
+			}
+		}
+
+
+		div.mobile-pullout {
+			position: fixed;
+			overflow: scroll;
+			overflow-x: hidden;
+
+			display: none;
+			flex-wrap: wrap;
+			justify-content: center;;
+			align-items: flex-start;
+
+		  top: 0px;
+		  right: 0px !important;
+		  bottom: 0px;
+		  left: auto;
+
+			animation: slideIn 0.4s ease;
+
+		  height: auto;
+		  width: 100%;
+			padding: 0px;
+		  background: $color-third;
+		  z-index: -1;
+
+			div, ul, li {
+				width: 100%;
+				height: inherit;
+				position: relative;
+			}
+
+			li {
+				justify-content: center;
+				opacity: 0;
+				animation: slideIn 0.4s ease;
+				animation-fill-mode: forwards;
+				margin-bottom: 0.2em;
+			}
+
+			.header-center-menu li > a {
+				font-size: 32px !important;
+
+				#{$hover} {
+					color: white !important;
+				}
+			}
+
+			.header-center-menu {
+				margin-top: -3em;
+			}
+
+			.white-bottom {
+				border-bottom: 2px solid rgba(white, 0.5);
+				height: 75px;
+			}
+
+			.header-right-menu {
+				justify-content: center;
+				padding-top: 0.8em;
+				position: fixed;
+				z-index: 0;
+    		bottom: 0.8em;
+				left: 0px;
+				border-top: 2px solid rgba(white, 0.5);
+
+				i {
+					font-size: 1.5em;
+					margin: 0 0.2em;
+				}
+			}
+
+			.header-right-menu li > a {
+				@include font-size(20px);
+			}
+
+			.menu-icons {
+				margin-top: 5px;
+			}
+		}
+
+		#toggle-right {
+		  display: none;
+			color: $color-main !important;
+		}
+	}
+
+}

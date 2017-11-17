@@ -1,0 +1,63 @@
+//
+// @file    colors.scss
+// @theme   irc
+//
+// @desc    defines theme colors
+// @usage
+//
+//
+
+// Palette colors
+$white: #FFFFFF;
+$black: #000000;
+$offblack: #333;
+
+$turquoise: #56DEB3;
+$turquoise-hover: darken( $turquoise, 20% );
+
+$blue: #3B98D1;
+
+$darkblue: #083D77;
+$darkblue-hover: darken( $darkblue, 20% );
+
+$grey: #F7F7F7;
+$light-grey: #858585;
+
+/*
+  Site Colors
+*/
+$color-main: $white;
+$color-secondary: $black;
+$color-third: $turquoise;
+$color-third-hover: $turquoise-hover;
+
+$color-fourth: $darkblue;
+$color-fourth-hover: $darkblue-hover;
+
+// 1. Document colors
+$body-color:  #7d7d7d;
+
+// 2. Header
+$header-color: transparent;
+$header-link-color: $darkblue;
+$header-link-hover: $darkblue-hover;
+
+// 3. Block element colors
+$color-bg: $color-secondary;
+$color-border: #cacaca;
+
+// 4. Text element colors
+$color-link: $turquoise;
+$color-link-hover: $turquoise-hover;
+
+$color-text: $darkblue;
+$color-p: $darkblue;
+$color-head: $darkblue;
+
+$button-color: $darkblue;
+$button-hover-color: $darkblue-hover;
+
+// 5. Footer
+$footer-color: $color-secondary;
+$footer-text: #cbcad0;
+$footer-link: $color-main;

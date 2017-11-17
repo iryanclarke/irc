@@ -1,0 +1,43 @@
+/*
+Theme Name: IRC
+Version: 1.0
+Description: Custom theme for Ian Ryan Clarke portfolio
+Author: Ian Ryan Clarke
+Author URI: http://iryanclarke.com
+*/
+
+
+
+// Variables
+@import "1_variables/colors";
+@import "1_variables/general";
+@import "1_variables/fonts";
+
+// Un-modified vendor files
+// @import "vendor/normalize";
+@import "2_vendor/reset";
+
+// Base
+@import "3_base/mixins";
+@import "3_base/general";
+@import "3_base/shared";
+@import "3_base/typography";
+@import "3_base/layouts";
+
+// Components
+@import "4_components/buttons";
+@import '4_components/hero-banner';
+@import "4_components/footer";
+@import "4_components/forms";
+@import '4_components/gravityforms';
+@import "4_components/header";
+@import "4_components/mobile-menu";
+
+// Specific pages
+@import '5_pages/home';
+@import '5_pages/pages';
+@import '5_pages/404';
+
+// Media styles
+@import '6_media/print';
+@import '6_media/adminbar';

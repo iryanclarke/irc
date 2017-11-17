@@ -1,0 +1,123 @@
+// GENERAL PAGE STYLES
+nav.blog-menu-nav ul {
+  padding: 15px 0 !important;
+  background: #859193;
+  text-align: center;
+
+  li {
+    padding-right: 2.5em;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-size: .75rem;
+    font-family: SoinSansNeue-Bold,sans-serif;
+  }
+  li > a {
+    padding-bottom: 0;
+    letter-spacing: 0.1em;
+    color: rgba(white, 0.6) !important;
+
+    #{$hover} {
+      color: rgba(white, 1) !important;
+    }
+  }
+  li.active > a {
+    color: rgba(white, 1) !important;
+
+    #{$hover} {
+      color: rgba(white, 0.6) !important;
+    }
+  }
+}
+
+.page-cms {
+  .post-footer,
+  .info-footer {
+    text-align: center;
+    margin: 4em 0;
+
+    a h3 {
+      @include font-size(22px);
+      color: $color-third;
+    }
+  }
+
+  #mc_embed_signup {
+
+		#mc_embed_signup_scroll,
+		.mc-field-group {
+			display: flex;
+			align-items: center;
+      justify-content: center;
+
+      @media only screen and (max-width: 600px) {
+        flex-wrap: wrap;
+      }
+		}
+
+		.fa {
+			color: white;
+			@include font-size(24px);
+			margin-left: 0.7em;
+		}
+
+		::-webkit-input-placeholder {
+       color: #859193 !important;
+       font-size: 12px;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+       color: #859193 !important;
+       font-size: 12px;
+    }
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: #859193 !important;
+       font-size: 12px;
+    }
+    :-ms-input-placeholder {
+       color: #859193 !important;
+       font-size: 12px;
+    }
+
+		input[type="email"] {
+      width: 65%;
+      min-width: 300px;
+      border: 2px solid rgba(#859193, 0.4);
+      color: #859193;
+      background: white;
+      padding: 0.5em 1em !important;
+      border-radius: 5px;
+      height: 35px;
+      margin-right: 1.5em;
+		}
+
+		input[type="submit"] {
+      // @MIXIN:
+    	// button(buttonColor, buttonHoverColor, textColor, textHoverColor, borderRadius)
+    	@include button(#667080, $button-hover-color, $color-main, $color-main, 5px);
+    	@include font-size(15px);
+      padding: 0.55em 1.5em !important;
+    	@include transition();
+    	font-weight: 600;
+      min-width: 220px;
+
+    	letter-spacing: 0em !important;
+
+    	border: 1px solid #667080;
+
+    	cursor: pointer;
+    	font-family: $fonts-head;
+
+    	#{$hover} {
+    		border: 1px solid $button-hover-color;
+    	}
+
+    	&:after {
+        content: none !important;
+      }
+
+    	&:active {
+    		#{$hover} {
+    		}
+    	}
+		}
+	}
+}

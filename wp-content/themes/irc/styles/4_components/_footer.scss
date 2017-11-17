@@ -1,0 +1,135 @@
+.pre-footer {
+  background-color: $grey;
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	padding: 3em 3em;
+
+	.pre-footer-content {
+		padding: 0em 3em;
+		flex: 1;
+		text-align: center;
+
+    .legal a p {
+      color: $color-fourth;
+      margin-bottom: 0.3em;
+    }
+
+		i {
+      color: $color-fourth;
+			font-size: 1.7em;
+			margin: 0 0.1em;
+		}
+
+		h3 {
+			line-height: 34px;
+			max-width: 240px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.footer-logo img {
+			max-width: 230px;
+			margin-top: 0.5em;
+      margin-bottom: 1.3em;
+		}
+
+		&:nth-child(2) {
+			border-left: 2px solid rgba(#CECECE,0.7);
+			border-right: 2px solid rgba(#CECECE,0.7);
+		}
+	}
+
+
+  @media only screen and (max-width: 999px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1em;
+
+    .pre-footer-content {
+      min-width: 100%;
+      @include stupidSafariFlex(1,1,100%);
+      padding: 2em 1em;
+
+      h3 {
+  			@include font-size(28px);
+  		}
+    }
+
+    .pre-footer-content:nth-child(2) {
+			border-left: none;
+			border-right: none;
+      border-top: 2px solid rgba(#CECECE,0.7);
+			border-bottom: 2px solid rgba(#CECECE,0.7);
+		}
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 999px) {
+      padding: 1em 4em;
+  }
+}
+
+footer {
+	background-color: $color-fourth;
+	position: relative;
+	padding: 0.2em 2em;
+
+	.credits-wrapper {
+		display: flex;
+		justify-content: space-between;
+
+		p, a {
+			@include font-size(18px);
+			color: white;
+			text-align: center;
+      line-height: 26px;
+		}
+		a {
+			color: $color-third;
+			padding: 0 0.6em;
+		}
+
+		.footer-right {
+			display: flex;
+			align-items: center;
+		}
+
+		.footer-right i {
+		  margin-right: 0.5em;
+			@include font-size(20px);
+		}
+
+		.footer-right a {
+			padding: 0em;
+		}
+
+		@media only screen and (max-width: 768px) {
+			flex-wrap: wrap;
+			justify-content: center;
+
+			& > div {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+			}
+
+      p.copyright:after {
+      	font-family: 'icomoon';
+      	content: '\e901';
+      	font-size: 2px;
+      	display: block;
+      	color: $color-third;
+      	margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: calc(100% - (50% + 21em));
+      }
+		}
+	}
+
+	// Footer mobile
+	@media only screen and (max-width: 999px) {
+
+		.wrapper {
+			padding: 1.1em 0px;
+		}
+	}
+}

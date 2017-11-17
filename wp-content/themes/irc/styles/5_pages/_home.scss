@@ -1,0 +1,62 @@
+.et_divi_builder #et_builder_outer_content {
+  .et_pb_section.homepage-banner {
+    height: 810px;
+    padding: 0 !important;
+
+    @media only screen and (max-width: 500px) {
+      background-position-x: calc(50% - 2.5em);
+    }
+
+    .et_pb_button {
+      margin-top: 5px;
+      padding: 0.6em 1em 0.5em !important;
+      @include font-size(20px);
+
+      #{$hover} {
+    		padding: 0.6em 1em 0.5em !important;
+    	}
+
+      @media only screen and (max-width: 500px) {
+        margin-top: 0px;
+      }
+    }
+
+
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      content: ' ';
+      background: rgba(white, 0.35);
+    }
+
+    .et_pb_row {
+      height: 100%;
+      padding: 4% 0;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      p {
+        @include font-size(18px);
+        max-width: 500px;
+      }
+    }
+    @media only screen and (min-width: 982px) {
+      .et_pb_column {
+        z-index: 2;
+
+        &:last-child {
+          margin-left: 12em!important;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      height: 100vh;
+    }
+  }
+}

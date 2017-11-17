@@ -1,0 +1,36 @@
+.btn,
+body button:not(.mfp-close),
+body.et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_button,
+body .gform_footer input[type="submit"] {
+
+
+	// @MIXIN:
+	// button(buttonColor, buttonHoverColor, textColor, textHoverColor, borderRadius)
+	@include button($button-color, $button-hover-color, $color-main, $color-main, 10px);
+	@include font-size(17px);
+	@include transition();
+	font-weight: 600;
+
+	text-transform: uppercase;
+
+	letter-spacing: 0em !important;
+
+	border: 1px solid $color-fourth;
+
+	cursor: pointer;
+	font-family: $fonts-head;
+	-webkit-appearance: none;
+
+	#{$hover} {
+		border: 1px solid $button-hover-color;
+	}
+
+	&:after {
+    content: none !important;
+  }
+
+	&:active {
+		#{$hover} {
+		}
+	}
+}

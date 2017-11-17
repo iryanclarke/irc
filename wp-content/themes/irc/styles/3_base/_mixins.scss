@@ -1,0 +1,221 @@
+// Overlay
+@mixin overlay($bgc: null) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $bgc;
+}
+
+// Positioning
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+
+// Tablet Media Query Mixin
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+// Tablet Media Query Mixin
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+// Positioning
+@mixin stupidSafariFlex($flex-grow, $flex-shrink, $min-width) {
+  flex: $flex-grow $flex-shrink $min-width;
+    /* Chrome 29+ */
+    @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+        flex: $flex-grow;
+    }
+}
+
+@mixin centerposition() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+@mixin center($maxwidth: null) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $maxwidth;
+}
+
+// Transition
+@mixin transition($duration: 0.2s) {
+  transition: all $duration ease-out;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+// Button styling
+@mixin button($bg-color: $color-main, $bg-hover: $color-third, $text-color:#000, $text-hover:#333, $radius: 10px) {
+  background-color: #{$bg-color};
+  color: #{$text-color} !important;
+  border-radius: #{$radius};
+  padding: 0.5em 1em 0.35em;
+  line-height: 1em;
+  margin: 0.5em 0;
+  font-weight: 600;
+  display: inline-block;
+  @include font-size(16px);
+
+  &:after {
+    content: none !important;
+  }
+
+  #{$hover} {
+    background-color: #{$bg-hover};
+    border: none;
+    color: #{$text-hover} !important;
+  }
+
+}
+
+// Output rem with a px fallback
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+/*
+ * HEADINGS
+ */
+@mixin h1() {
+  @include font-size(52px);
+  line-height: 56px;
+  font-weight: 600;
+  margin-bottom: 8px;
+
+
+  @media only screen and (max-width: 768px) {
+    @include font-size(34px);
+  }
+}
+
+@mixin h1-eyebrow() {
+  font-weight: 300;
+	display: block;
+}
+
+@mixin h2() {
+  @include font-size(40px);
+  line-height: 46px;
+  font-weight: 500;
+  color: $color-head;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:after {
+  	font-family: 'icomoon';
+  	content: '\e900';
+  	font-size: 5px;
+  	display: block;
+  	color: $color-third;
+  	margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    @include font-size(28px);
+  }
+}
+
+@mixin h2-eyebrow() {
+  font-size: 28px !important;
+  line-height: 40px;
+	font-weight: 400 !important;
+	margin-bottom: 5px !important;
+	color: $color-third !important;
+	display: block;
+}
+
+@mixin h3() {
+  @include font-size(28px);
+  font-weight: 500;
+  margin-bottom: 0.6em;
+  line-height: 22px;
+  letter-spacing: 0em;
+  color: $color-head;
+
+  @media only screen and (max-width: 768px) {
+    @include font-size(20px);
+  }
+
+}
+@mixin h4() {
+  @include font-size(24px);
+  font-weight: 600;
+  line-height: 33px;
+  letter-spacing: 0.02em;
+  color: $color-head;
+}
+
+@mixin h5() {
+  @include font-size(15px);
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: $color-head;
+  text-transform: uppercase;
+}
+
+@mixin paragraph() {
+  @include font-size(18px);
+  font-weight: 100;
+  color: $color-p;
+  line-height: 22px;
+
+  @media only screen and  (max-width: 768px) {
+    @include font-size(14px);
+    line-height: 18px;
+  }
+}
+@mixin small-paragraph() {
+  @include font-size(15px);
+  font-weight: 300;
+  color: $color-p;
+  line-height: 20px;
+}
+@mixin large-paragraph() {
+  font-size: 22px !important;
+	font-weight: 400 !important;
+	margin-bottom: 8px !important;
+	line-height: 32px !important;
+	max-width: 640px !important;
+	margin: 0 auto;
+	padding-bottom: 0em !important;
+
+  @media only screen and  (max-width: 768px) {
+    font-size: 18px !important;
+    line-height: 22px !important;
+  }
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+@for $i from 1 to 10 {
+  header .header-center-menu li:nth-child(#{$i}) { animation-delay: $i * 0.1s; }
+}
